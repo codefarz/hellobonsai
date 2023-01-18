@@ -286,17 +286,17 @@ li {
 }
 
 .card .benefits li {
-    width: 300px;
-    color: var(--bonsai-gray);
-    display: grid;
-    grid-template-columns: 13px auto;
-    place-items: start;
-    align-self: center;
-    margin: auto;
-    font-size: 12px;
-    padding: 12px 16px;
-    align-items: center;
-    justify-content: start;
+  width: 300px;
+  color: var(--bonsai-gray);
+  display: grid;
+  grid-template-columns: 13px auto;
+  place-items: start;
+  align-self: center;
+  margin: auto;
+  font-size: 12px;
+  padding: 12px 16px;
+  align-items: center;
+  justify-content: start;
 }
 
 .card-two {
@@ -336,7 +336,7 @@ li {
   .submenu-navbar {
     border-top: 1px solid var(--md-gray);
   }
-  
+
   .navbar-container,
   .submenu-navbar {
     grid-column-start: 2;
@@ -348,7 +348,7 @@ li {
   }
 
   .navbar-container .titles-nav,
-.submenu-navbar .titles-nav {
+  .submenu-navbar .titles-nav {
     display: block;
   }
 
@@ -358,6 +358,7 @@ li {
 }
 
 @media (min-width: 1600px) {
+
   .navbar-container,
   .submenu-navbar {
     grid-column-start: 3;
