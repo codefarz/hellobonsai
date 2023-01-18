@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Pricing cards</title>
+    <style>
+      
+
+      .row {
+        grid-column-start: 2;
+        grid-column-end: 12;
+      }
+
+      h1 {
+        display: flex;
+        text-align: center;
+        font-size: 55px;
+        width: 640px;
+        height: 120px;
+        margin: 30px auto 0;
+        color: var(--dark-green);
+        line-height: 60px;
+      }
+
+      .container-frecuency-pay,
+      .monthly,
+      .yearly {
+        display: flex;
+        align-items: center;
+      }
+
+      .container-frecuency-pay {
+        background-color: var(--light-gray);
+        width: 322px;
+        height: 64px;
+        margin: 20px auto 20px;
+        font-size: 14px;
+        border-radius: 40px;
+        justify-content: space-between;
+        align-content: center;
+      }
+
+      .monthly {
+        width: 115px;
+        height: 52px;
+        border-radius: 40px;
+        margin-left: 6px;
+        justify-content: center;
+      }
+
+      .yearly {
+        justify-content: space-around;
+        width: 200px;
+        height: 52px;
+        margin-right: 6px;
+        margin-left: 6px;
+        border-radius: 40px;
+      }
+
+      .yearly p:last-child {
+        font-size: 10px;
+        border: 1px solid white;
+        border-radius: 8px;
+        width: 100px;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        color: var(--green);
+        background-color: white;
+      }
+
+      .yearly:hover,
+      .monthly:hover {
+        background-color: var(--dark-green);
+        color: var(--white);
+      }
+
+      @media (min-width: 980px) {
+        
+      }
+
+      @media (min-width: 1600px) {
+        
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid-container pricing-cards">
+      <div class="row">
+        <h1 class="tittle-one">Pick the best plan for your business</h1>
+  
+        <div class="container-frecuency-pay">
+          <div class="monthly">
+            <p>Monthly</p>
+          </div>
+          <div class="yearly">
+            <p>Yearly</p>
+            <p>2 months for free</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
