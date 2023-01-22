@@ -135,8 +135,6 @@ border: none;
 }
 
 .navbar-container {
-  position: sticky;
-  top: 0;
   grid-column-start: 2;
   grid-column-end: 12;
   width: 100%;
@@ -243,7 +241,7 @@ border: none;
   border-bottom: none;
 }
 
-.menu-mobile ul li img:hover {
+.arrow-transform {
   transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(180deg) skew(0deg, 0deg);
   transform-style: preserve-3d;
 }
