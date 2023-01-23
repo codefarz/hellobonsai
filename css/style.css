@@ -312,8 +312,7 @@ border: none;
   background-color: var(--white);
 }
 
-.yearly:hover,
-.monthly:hover {
+.toggle-button-pricing {
   background-color: var(--dark-green);
   color: var(--white);
 }
