@@ -9,6 +9,9 @@ const btnYearly = document.querySelector('#yearly')
 const priceStarter = document.querySelector('#price-starter')
 const priceProfessional = document.querySelector('#price-professional')
 const priceBusiness = document.querySelector('#price-business')
+const productListMobile = document.querySelector('.product-list-mobile')
+const templatesList = document.querySelector('#templates-list')
+const productList = document.querySelector('#product-list')
 
 
 iconMenu.addEventListener('click', () => {
@@ -17,15 +20,16 @@ iconMenu.addEventListener('click', () => {
 
 linkMenuMobileOne.addEventListener('click', () => {
     arrowMenuMobileOne.classList.toggle('arrow-transform')
+    productList.classList.toggle('inactive')
 })
 
 linkMenuMobileTwo.addEventListener('click', () => {
     arrowMenuMobileTwo.classList.toggle('arrow-transform')
+    templatesList.classList.toggle('inactive')
 })
 
 btnMonthly.addEventListener('click', toggleBtn)
 btnYearly.addEventListener('click', toggleBtn)
-
 
 function toggleBtn() {
     btnMonthly.classList.toggle('toggle-button-pricing')
