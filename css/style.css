@@ -275,17 +275,21 @@ button {
   justify-content: space-evenly;
   grid-column-start: 2;
   grid-column-end: 12;
+  padding-bottom: 40px;
   flex-direction: row;
   font-size: 13px;
   font-weight: 500;
   color: var(--dark-green);
+  box-shadow: 0 10px 14px var(--shadow-color);
 }
 
 .down-menu li {
-  padding-top: 10px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
-.down-menu li a {
+.down-menu li a,
+#product-down-menu .down-menu ul:last-child p:nth-child(3)  {
   color: var(--bonsai-gray);
 }
 
@@ -301,10 +305,37 @@ button {
   width: 128px;
 }
 
-.down-menu ul:last-child a {
+#product-down-menu .down-menu ul:last-child a {
   color: var(--green);
   text-decoration: underline;
   font-weight: 800;
+}
+
+.link-down-menu-decoration {
+  background-image: url("https://assets-global.website-files.com/635ac9564cc3682ce1536786/6393136ee58070fb01ad4cd4_Vector%2089%20(Stroke).svg");
+  background-repeat: no-repeat;
+  background-position: 95% 50%;
+  background-color: var(--bonsai-light-gray);
+}
+
+#templates-down-menu .down-menu #templates-links {
+  border-right: 1px solid var(--shadow-color);
+  width: 285px;
+}
+
+#templates-down-menu .down-menu #templates-links li {
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-left: 10px;
+  border-radius: 8px;
+}
+
+#templates-down-menu .down-menu div ul {
+  width: 100%;
+}
+
+#templates-down-menu .down-menu div:first-child ul {
+  padding-left: 20px;
 }
 
 /* main */
