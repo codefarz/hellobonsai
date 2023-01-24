@@ -268,6 +268,45 @@ button {
   transform-style: preserve-3d;
 }
 
+/* donw menu */
+
+.down-menu {
+  display: flex;
+  justify-content: space-evenly;
+  grid-column-start: 2;
+  grid-column-end: 12;
+  flex-direction: row;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--dark-green);
+}
+
+.down-menu li {
+  padding-top: 10px;
+}
+
+.down-menu li a {
+  color: var(--bonsai-gray);
+}
+
+.down-menu li a:hover {
+  color: var(--hover-green);
+}
+
+.down-menu ul p:first-child {
+  padding-bottom: 20px;
+}
+
+.down-menu img {
+  width: 128px;
+}
+
+.down-menu ul:last-child a {
+  color: var(--green);
+  text-decoration: underline;
+  font-weight: 800;
+}
+
 /* main */
 
 .row {

@@ -12,6 +12,11 @@ const priceBusiness = document.querySelector('#price-business')
 const productListMobile = document.querySelector('.product-list-mobile')
 const templatesList = document.querySelector('#templates-list')
 const productList = document.querySelector('#product-list')
+const productDownMenu = document.querySelector('#product-down-menu')
+const industriesDownMenu = document.querySelector('#industries-down-menu')
+const productTitleNav = document.querySelector('#product-title-nav')
+const industriesTitleNav = document.querySelector('#industries-title-nav')
+const templatesTitleNav = document.querySelector('#templates-title-nav')
 
 
 iconMenu.addEventListener('click', () => {
@@ -27,6 +32,16 @@ linkMenuMobileTwo.addEventListener('click', () => {
     arrowMenuMobileTwo.classList.toggle('arrow-transform')
     templatesList.classList.toggle('inactive')
 })
+
+productTitleNav.onmouseover = () => {
+    productDownMenu.classList.remove("inactive")
+    industriesDownMenu.classList.add('inactive')
+}
+
+industriesTitleNav.onmouseover = () => {
+    industriesDownMenu.classList.remove("inactive")
+    productDownMenu.classList.add('inactive')
+}
 
 btnMonthly.addEventListener('click', toggleBtn)
 btnYearly.addEventListener('click', toggleBtn)
@@ -48,3 +63,4 @@ function changePricing() {
         priceBusiness.innerText = 52;
     }
 }
+
