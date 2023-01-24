@@ -4,8 +4,8 @@ const linkMenuMobileOne = document.querySelector('.link-menu-mobile-one')
 const arrowMenuMobileOne = document.querySelector('.arrow-down-one')
 const linkMenuMobileTwo = document.querySelector('.link-menu-mobile-two')
 const arrowMenuMobileTwo = document.querySelector('.arrow-down-two')
-const btnMonthly = document.querySelector('.monthly')
-const btnYearly = document.querySelector('.yearly')
+const btnMonthly = document.querySelector('#monthly')
+const btnYearly = document.querySelector('#yearly')
 const priceStarter = document.querySelector('#price-starter')
 const priceProfessional = document.querySelector('#price-professional')
 const priceBusiness = document.querySelector('#price-business')
@@ -23,18 +23,24 @@ linkMenuMobileTwo.addEventListener('click', () => {
     arrowMenuMobileTwo.classList.toggle('arrow-transform')
 })
 
-btnMonthly.addEventListener('click', () => {
-    btnMonthly.classList.toggle('toggle-button-pricing')
-    btnYearly.classList.remove('toggle-button-pricing')
-    priceStarter.innerText = 24
-    priceProfessional.innerText = 39
-    priceBusiness.innerText = 79
-})
+btnMonthly.addEventListener('click', toggleBtn)
+btnYearly.addEventListener('click', toggleBtn)
 
-btnYearly.addEventListener('click', () => {
+
+function toggleBtn() {
+    btnMonthly.classList.toggle('toggle-button-pricing')
     btnYearly.classList.toggle('toggle-button-pricing')
-    btnMonthly.classList.remove('toggle-button-pricing')
-    priceStarter.innerText = 17
-    priceProfessional.innerText = 32
-    priceBusiness.innerText = 52
-})
+    changePricing()
+}
+
+function changePricing() {
+    if (priceStarter.textContent == 17) {
+        priceStarter.innerText = 24;
+        priceProfessional.innerText = 39;
+        priceBusiness.innerText = 79;
+    } else {
+        priceStarter.innerText = 17;
+        priceProfessional.innerText = 32;
+        priceBusiness.innerText = 52;
+    }
+}
