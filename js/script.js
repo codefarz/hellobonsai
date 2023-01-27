@@ -69,7 +69,7 @@ newTitleNav[2].onmouseover = () => { down(2) }
 pricingCards.onmouseover = () => { down("end") }
 
 function down(pos) {
-    if (pos == 0 || pos == 1 || pos == 2) {
+    if (pos !== "end") {
         let n1 = newDownMenu[pos];
         newDownMenu[pos].classList.remove("inactive");
         newDownMenu.splice(pos, 1);
