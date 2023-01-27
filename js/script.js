@@ -1,4 +1,6 @@
+//------------------------------------------------------
 // mobile menu
+//------------------------------------------------------
 
 const iconMenu = document.querySelector(".icon-menu");
 const menuMobile = document.querySelector("#menu-mobile");
@@ -20,9 +22,9 @@ function proof(pos) {
     arrowMenuMobile[pos].classList.toggle("arrow-transform");
 }
 
-// -------------------------------------------
-
+//------------------------------------------------------
 // pricing cards
+//------------------------------------------------------
 
 const btnMonthly = document.querySelector("#monthly");
 const btnYearly = document.querySelector("#yearly");
@@ -51,9 +53,11 @@ function changePricing() {
     }
 }
 
-// -------------------------------------------
-
+//------------------------------------------------------
 // nav menu - down menu
+//------------------------------------------------------
+
+// first block
 
 const newDownMenu = Array.from(document.getElementsByClassName("down-links"));
 const newTitleNav = Array.from(document.getElementsByClassName("title-nav"));
@@ -66,16 +70,13 @@ pricingCards.onmouseover = () => { down("end") }
 
 function down(pos) {
     if (pos == 0 || pos == 1 || pos == 2) {
-        console.log(newDownMenu);
         let n1 = newDownMenu[pos];
         newDownMenu[pos].classList.remove("inactive");
         newDownMenu.splice(pos, 1);
-        console.log(newDownMenu);
         for (let i = 0; i < newDownMenu.length; i++) {
             newDownMenu[i].classList.add("inactive");
         }
         newDownMenu.splice(pos, 0, n1)
-        console.log(newDownMenu);
     } else {
         for (let i = 0; i < newDownMenu.length; i++) {
             newDownMenu[i].classList.add("inactive");
@@ -83,166 +84,43 @@ function down(pos) {
     }
 }
 
-const contractTemplatesLink = document.querySelector(
-    ".contract-templates-link"
-);
-const proposalTemplatesLink = document.querySelector(
-    ".proposal-templates-link"
-);
-const invoiceTemplatesLink = document.querySelector(".invoice-templates-link");
-const quoteTemplatesLink = document.querySelector(".quote-templates-link");
-const scopeTemplatesLink = document.querySelector(".scope-templates-link");
-const briefTemplatesLink = document.querySelector(".brief-templates-link");
-const formTemplatesLink = document.querySelector(".form-templates-link");
-const featuredContractTemplates = document.getElementsByClassName(
-    "featured-contract-templates"
-);
-const featuredProposalTemplates = document.getElementsByClassName(
-    "featured-proposal-templates"
-);
-const featuredInvoiceTemplates = document.getElementsByClassName(
-    "featured-invoice-templates"
-);
-const featuredQuoteTemplates = document.getElementsByClassName(
-    "featured-quote-templates"
-);
-const featuredScopeTemplates = document.getElementsByClassName(
-    "featured-scope-templates"
-);
-const featuredBriefTemplates = document.getElementsByClassName(
-    "featured-brief-templates"
-);
-const featuredFormTemplates = document.getElementsByClassName(
-    "featured-form-templates"
-);
+// second block
 
+const templatesLink = Array.from(document.querySelectorAll(".templates-link"));
+const featuredTemplates = Array.from(document.querySelectorAll(".featured-templates"))
+const featuredTemplates2 = Array.from(document.querySelectorAll(".featured-templates-2"))
 
-contractTemplatesLink.addEventListener("click", () => {
-    contractTemplatesLink.classList.add("link-down-menu-decoration");
-    proposalTemplatesLink.classList.remove("link-down-menu-decoration");
-    invoiceTemplatesLink.classList.remove("link-down-menu-decoration");
-    quoteTemplatesLink.classList.remove("link-down-menu-decoration");
-    scopeTemplatesLink.classList.remove("link-down-menu-decoration");
-    briefTemplatesLink.classList.remove("link-down-menu-decoration");
-    formTemplatesLink.classList.remove("link-down-menu-decoration");
-    for (let i = 0; i < featuredContractTemplates.length; i++) {
-        featuredContractTemplates[i].classList.remove("inactive");
-        featuredProposalTemplates[i].classList.add("inactive");
-        featuredInvoiceTemplates[i].classList.add("inactive");
-        featuredQuoteTemplates[i].classList.add("inactive");
-        featuredScopeTemplates[i].classList.add("inactive");
-        featuredBriefTemplates[i].classList.add("inactive");
-        featuredFormTemplates[i].classList.add("inactive");
-    }
-});
-proposalTemplatesLink.addEventListener("click", () => {
-    proposalTemplatesLink.classList.add("link-down-menu-decoration");
-    contractTemplatesLink.classList.remove("link-down-menu-decoration");
-    invoiceTemplatesLink.classList.remove("link-down-menu-decoration");
-    quoteTemplatesLink.classList.remove("link-down-menu-decoration");
-    scopeTemplatesLink.classList.remove("link-down-menu-decoration");
-    briefTemplatesLink.classList.remove("link-down-menu-decoration");
-    formTemplatesLink.classList.remove("link-down-menu-decoration");
-    for (let i = 0; i < featuredProposalTemplates.length; i++) {
-        featuredContractTemplates[i].classList.add("inactive");
-        featuredProposalTemplates[i].classList.remove("inactive");
-        featuredInvoiceTemplates[i].classList.add("inactive");
-        featuredQuoteTemplates[i].classList.add("inactive");
-        featuredScopeTemplates[i].classList.add("inactive");
-        featuredBriefTemplates[i].classList.add("inactive");
-        featuredFormTemplates[i].classList.add("inactive");
-    }
-});
-invoiceTemplatesLink.addEventListener("click", () => {
-    invoiceTemplatesLink.classList.add("link-down-menu-decoration");
-    contractTemplatesLink.classList.remove("link-down-menu-decoration");
-    proposalTemplatesLink.classList.remove("link-down-menu-decoration");
-    quoteTemplatesLink.classList.remove("link-down-menu-decoration");
-    scopeTemplatesLink.classList.remove("link-down-menu-decoration");
-    briefTemplatesLink.classList.remove("link-down-menu-decoration");
-    formTemplatesLink.classList.remove("link-down-menu-decoration");
-    for (let i = 0; i < featuredInvoiceTemplates.length; i++) {
-        featuredContractTemplates[i].classList.add("inactive");
-        featuredProposalTemplates[i].classList.add("inactive");
-        featuredInvoiceTemplates[i].classList.remove("inactive");
-        featuredQuoteTemplates[i].classList.add("inactive");
-        featuredScopeTemplates[i].classList.add("inactive");
-        featuredBriefTemplates[i].classList.add("inactive");
-        featuredFormTemplates[i].classList.add("inactive");
-    }
-});
-quoteTemplatesLink.addEventListener("click", () => {
-    quoteTemplatesLink.classList.add("link-down-menu-decoration");
-    contractTemplatesLink.classList.remove("link-down-menu-decoration");
-    proposalTemplatesLink.classList.remove("link-down-menu-decoration");
-    invoiceTemplatesLink.classList.remove("link-down-menu-decoration");
-    scopeTemplatesLink.classList.remove("link-down-menu-decoration");
-    briefTemplatesLink.classList.remove("link-down-menu-decoration");
-    formTemplatesLink.classList.remove("link-down-menu-decoration");
-    for (let i = 0; i < featuredQuoteTemplates.length; i++) {
-        featuredContractTemplates[i].classList.add("inactive");
-        featuredProposalTemplates[i].classList.add("inactive");
-        featuredInvoiceTemplates[i].classList.add("inactive");
-        featuredQuoteTemplates[i].classList.remove("inactive");
-        featuredScopeTemplates[i].classList.add("inactive");
-        featuredBriefTemplates[i].classList.add("inactive");
-        featuredFormTemplates[i].classList.add("inactive");
-    }
-});
-scopeTemplatesLink.addEventListener("click", () => {
-    scopeTemplatesLink.classList.add("link-down-menu-decoration");
-    contractTemplatesLink.classList.remove("link-down-menu-decoration");
-    proposalTemplatesLink.classList.remove("link-down-menu-decoration");
-    invoiceTemplatesLink.classList.remove("link-down-menu-decoration");
-    quoteTemplatesLink.classList.remove("link-down-menu-decoration");
-    briefTemplatesLink.classList.remove("link-down-menu-decoration");
-    formTemplatesLink.classList.remove("link-down-menu-decoration");
-    for (let i = 0; i < featuredScopeTemplates.length; i++) {
-        featuredContractTemplates[i].classList.add("inactive");
-        featuredProposalTemplates[i].classList.add("inactive");
-        featuredInvoiceTemplates[i].classList.add("inactive");
-        featuredQuoteTemplates[i].classList.add("inactive");
-        featuredScopeTemplates[i].classList.remove("inactive");
-        featuredBriefTemplates[i].classList.add("inactive");
-        featuredFormTemplates[i].classList.add("inactive");
-    }
-});
-briefTemplatesLink.addEventListener("click", () => {
-    briefTemplatesLink.classList.add("link-down-menu-decoration");
-    contractTemplatesLink.classList.remove("link-down-menu-decoration");
-    proposalTemplatesLink.classList.remove("link-down-menu-decoration");
-    invoiceTemplatesLink.classList.remove("link-down-menu-decoration");
-    quoteTemplatesLink.classList.remove("link-down-menu-decoration");
-    scopeTemplatesLink.classList.remove("link-down-menu-decoration");
-    formTemplatesLink.classList.remove("link-down-menu-decoration");
-    for (let i = 0; i < featuredBriefTemplates.length; i++) {
-        featuredContractTemplates[i].classList.add("inactive");
-        featuredProposalTemplates[i].classList.add("inactive");
-        featuredInvoiceTemplates[i].classList.add("inactive");
-        featuredQuoteTemplates[i].classList.add("inactive");
-        featuredScopeTemplates[i].classList.add("inactive");
-        featuredBriefTemplates[i].classList.remove("inactive");
-        featuredFormTemplates[i].classList.add("inactive");
-    }
-});
-formTemplatesLink.addEventListener("click", () => {
-    formTemplatesLink.classList.add("link-down-menu-decoration");
-    contractTemplatesLink.classList.remove("link-down-menu-decoration");
-    proposalTemplatesLink.classList.remove("link-down-menu-decoration");
-    invoiceTemplatesLink.classList.remove("link-down-menu-decoration");
-    quoteTemplatesLink.classList.remove("link-down-menu-decoration");
-    scopeTemplatesLink.classList.remove("link-down-menu-decoration");
-    briefTemplatesLink.classList.remove("link-down-menu-decoration");
-    for (let i = 0; i < featuredFormTemplates.length; i++) {
-        featuredContractTemplates[i].classList.add("inactive");
-        featuredProposalTemplates[i].classList.add("inactive");
-        featuredInvoiceTemplates[i].classList.add("inactive");
-        featuredQuoteTemplates[i].classList.add("inactive");
-        featuredScopeTemplates[i].classList.add("inactive");
-        featuredBriefTemplates[i].classList.add("inactive");
-        featuredFormTemplates[i].classList.remove("inactive");
-    }
-});
+templatesLink[0].addEventListener("click", () => { linkDown(0) })
+templatesLink[1].addEventListener("click", () => { linkDown(1) })
+templatesLink[2].addEventListener("click", () => { linkDown(2) })
+templatesLink[3].addEventListener("click", () => { linkDown(3) })
+templatesLink[4].addEventListener("click", () => { linkDown(4) })
+templatesLink[5].addEventListener("click", () => { linkDown(5) })
+templatesLink[6].addEventListener("click", () => { linkDown(6) })
 
-// -------------------------------------------
+function linkDown(pos) {
+    let n1 = templatesLink[pos];
+    templatesLink[pos].classList.add("link-down-menu-decoration");
+    templatesLink.splice(pos, 1);
+    for (let i = 0; i < templatesLink.length; i++) {
+        templatesLink[i].classList.remove("link-down-menu-decoration");
+    }
+    templatesLink.splice(pos, 0, n1)
 
+    console.log(featuredTemplates)
+    console.log(featuredTemplates2)
+    let n2 = featuredTemplates[pos];
+    let n3 = featuredTemplates2[pos];
+    featuredTemplates[pos].classList.remove("inactive");
+    featuredTemplates2[pos].classList.remove("inactive");
+    featuredTemplates.splice(pos, 1);
+    featuredTemplates2.splice(pos, 1);
+    for (let i = 0; i < featuredTemplates.length; i++) {
+        featuredTemplates[i].classList.add("inactive");
+        featuredTemplates2[i].classList.add("inactive");
+    }
+    featuredTemplates.splice(pos, 0, n2)
+    featuredTemplates2.splice(pos, 0, n3)
+};
+
+//------------------------------------------------------
