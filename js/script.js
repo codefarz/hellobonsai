@@ -5,25 +5,20 @@ const menuMobile = document.querySelector("#menu-mobile");
 
 const linkMenuMobileOne = document.querySelector(".link-menu-mobile-one");
 const linkMenuMobileTwo = document.querySelector(".link-menu-mobile-two");
-const arrowMenuMobileOne = document.querySelector(".arrow-down-one");
-const arrowMenuMobileTwo = document.querySelector(".arrow-down-two");
-const productListMobile = document.querySelector(".product-list-mobile");
-const templatesList = document.querySelector("#templates-list");
-const productList = document.querySelector("#product-list");
+const arrowMenuMobile = document.querySelectorAll(".arrow-down");
+const productListMobile = document.querySelectorAll(".product-list-mobile");
 
 iconMenu.addEventListener('click', () => {
     menuMobile.classList.toggle("inactive");
 });
 
-linkMenuMobileOne.addEventListener('click', () => {
-    arrowMenuMobileOne.classList.toggle("arrow-transform");
-    productList.classList.toggle("inactive");
-});
+linkMenuMobileOne.addEventListener('click', () => { proof(0) });
+linkMenuMobileTwo.addEventListener('click', () => { proof(1) });
 
-linkMenuMobileTwo.addEventListener('click', () => {
-    arrowMenuMobileTwo.classList.toggle("arrow-transform");
-    templatesList.classList.toggle("inactive");
-});
+function proof(pos) {
+    productListMobile[pos].classList.toggle("inactive");
+    arrowMenuMobile[pos].classList.toggle("arrow-transform");
+}
 
 // -------------------------------------------
 
@@ -58,14 +53,36 @@ function changePricing() {
 
 // -------------------------------------------
 
-// nav menu
+// nav menu - down menu
 
-const productDownMenu = document.querySelector("#product-down-menu");
-const industriesDownMenu = document.querySelector("#industries-down-menu");
-const templatesDownMenu = document.querySelector("#templates-down-menu");
-const productTitleNav = document.querySelector("#product-title-nav");
-const industriesTitleNav = document.querySelector("#industries-title-nav");
-const templatesTitleNav = document.querySelector("#templates-title-nav");
+const newDownMenu = Array.from(document.getElementsByClassName("down-links"));
+const newTitleNav = Array.from(document.getElementsByClassName("title-nav"));
+const pricingCards = document.querySelector('.pricing-cards')
+
+newTitleNav[0].onmouseover = () => { down(0) }
+newTitleNav[1].onmouseover = () => { down(1) }
+newTitleNav[2].onmouseover = () => { down(2) }
+pricingCards.onmouseover = () => { down("end") }
+
+function down(pos) {
+    if (pos == 0 || pos == 1 || pos == 2) {
+        console.log(newDownMenu);
+        let n1 = newDownMenu[pos];
+        newDownMenu[pos].classList.remove("inactive");
+        newDownMenu.splice(pos, 1);
+        console.log(newDownMenu);
+        for (let i = 0; i < newDownMenu.length; i++) {
+            newDownMenu[i].classList.add("inactive");
+        }
+        newDownMenu.splice(pos, 0, n1)
+        console.log(newDownMenu);
+    } else {
+        for (let i = 0; i < newDownMenu.length; i++) {
+            newDownMenu[i].classList.add("inactive");
+        };
+    }
+}
+
 const contractTemplatesLink = document.querySelector(
     ".contract-templates-link"
 );
@@ -98,32 +115,7 @@ const featuredBriefTemplates = document.getElementsByClassName(
 const featuredFormTemplates = document.getElementsByClassName(
     "featured-form-templates"
 );
-const pricingCards = document.querySelector('.pricing-cards')
 
-
-productTitleNav.onmouseover = () => {
-    productDownMenu.classList.remove("inactive");
-    industriesDownMenu.classList.add("inactive");
-    templatesDownMenu.classList.add('inactive');
-};
-
-industriesTitleNav.onmouseover = () => {
-    industriesDownMenu.classList.remove("inactive");
-    productDownMenu.classList.add("inactive");
-    templatesDownMenu.classList.add('inactive');
-};
-
-templatesTitleNav.onmouseover = () => {
-    industriesDownMenu.classList.add("inactive");
-    productDownMenu.classList.add("inactive");
-    templatesDownMenu.classList.remove('inactive');
-};
-
-pricingCards.onmouseover = () => {
-    productDownMenu.classList.add("inactive");
-    industriesDownMenu.classList.add("inactive");
-    templatesDownMenu.classList.add('inactive');
-};
 
 contractTemplatesLink.addEventListener("click", () => {
     contractTemplatesLink.classList.add("link-down-menu-decoration");
